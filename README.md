@@ -2,10 +2,6 @@
 
 A sleek, modern, security-themed webpage showcasing a Zero Trust Passwordless Login system using FIDO2 and biometric authentication.
 
-![Zero Trust Authentication](https://img.shields.io/badge/Security-Zero%20Trust-blue)
-![FIDO2](https://img.shields.io/badge/Protocol-FIDO2-green)
-![WebAuthn](https://img.shields.io/badge/API-WebAuthn-orange)
-
 ## 🌟 Features
 
 - **Passwordless Authentication** - Eliminate passwords using cryptographic keys
