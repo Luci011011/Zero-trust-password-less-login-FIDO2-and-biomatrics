@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zero Trust Passwordless Login system using FIDO2, WebAuthn, and biometric authentication. Secure, phishing-resistant authentication with modern UI.">
+    <meta name="keywords" content="FIDO2, WebAuthn, Zero Trust, Passwordless, Biometric Authentication, Security, Public Key Cryptography">
+    <meta name="author" content="Zero Trust Auth">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zero Trust Passwordless Login | FIDO2 & Biometrics">
+    <meta property="og:description" content="Secure passwordless authentication using FIDO2, WebAuthn, and biometric verification">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Zero Trust Passwordless Login | FIDO2 & Biometrics">
+    <meta property="twitter:description" content="Secure passwordless authentication using FIDO2, WebAuthn, and biometric verification">
+    
+    <title>Zero Trust Passwordless Login | FIDO2 & Biometrics</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-shield-alt"></i>
+                <span>ZeroTrust Auth</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#technology">Technology</a></li>
+                <li><a href="#flow">Flow</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#implementation">Implementation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Zero Trust</span> Passwordless Authentication
+                </h1>
+                <p class="hero-subtitle">
+                    Secure, seamless authentication using FIDO2, WebAuthn, and biometric verification
+                </p>
+                <div class="hero-badges">
+                    <span class="badge"><i class="fas fa-lock"></i> Phishing Resistant</span>
+                    <span class="badge"><i class="fas fa-fingerprint"></i> Biometric Enabled</span>
+                    <span class="badge"><i class="fas fa-key"></i> No Passwords</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Future of Authentication</h2>
+                <p class="section-subtitle">Moving beyond passwords to continuous verification</p>
+            </div>
+            <div class="content-grid">
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-unlock-alt"></i>
+                    </div>
+                    <h3>Passwordless Revolution</h3>
+                    <p>Traditional passwords are the weakest link in security. They're vulnerable to phishing, reuse, and breaches. Passwordless authentication eliminates these risks by using cryptographic keys and biometric verification.</p>
+                </div>
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <h3>Zero Trust Architecture</h3>
+                    <p>Zero Trust assumes no implicit trust. Every access request must be verified, authenticated, and authorized. Continuous risk assessment ensures that security adapts to changing threat landscapes in real-time.</p>
+                </div>
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Continuous Verification</h3>
+                    <p>Unlike traditional authentication that verifies once, Zero Trust requires ongoing validation. Risk signals, device posture, and behavioral analytics continuously assess the security context.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Deep Dive -->
+    <section id="technology" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2>Core Technologies</h2>
+                <p class="section-subtitle">Understanding FIDO2, WebAuthn, and cryptographic security</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-header">
+                        <i class="fas fa-certificate"></i>
+                        <h3>FIDO2</h3>
+                    </div>
+                    <p>Fast IDentity Online 2 is an open authentication standard that enables passwordless, multi-factor authentication. It combines WebAuthn and CTAP (Client to Authenticator Protocol) to provide strong cryptographic authentication.</p>
+                    <ul class="tech-features">
+                        <li><i class="fas fa-check"></i> Industry-standard protocol</li>
+                        <li><i class="fas fa-check"></i> Supported by major browsers</li>
+                        <li><i class="fas fa-check"></i> Hardware security key support</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-header">
+                        <i class="fas fa-globe"></i>
+                        <h3>WebAuthn API</h3>
+                    </div>
+                    <p>Web Authentication API is a W3C standard that enables web applications to authenticate users using public-key cryptography. It provides a standardized way to use FIDO2 authenticators in web browsers.</p>
+                    <ul class="tech-features">
+                        <li><i class="fas fa-check"></i> Browser-native API</li>
+                        <li><i class="fas fa-check"></i> Cross-platform support</li>
+                        <li><i class="fas fa-check"></i> No plugins required</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-header">
+                        <i class="fas fa-key"></i>
+                        <h3>Public-Key Cryptography</h3>
+                    </div>
+                    <p>Each device generates a unique key pair: a private key (never leaves the device) and a public key (shared with the server). Authentication uses cryptographic signatures, making it impossible to replay or forge.</p>
+                    <ul class="tech-features">
+                        <li><i class="fas fa-check"></i> Asymmetric encryption</li>
+                        <li><i class="fas fa-check"></i> Private key never transmitted</li>
+                        <li><i class="fas fa-check"></i> Challenge-response protocol</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-header">
+                        <i class="fas fa-fingerprint"></i>
+                        <h3>Biometric Authentication</h3>
+                    </div>
+                    <p>Biometric data (fingerprint, face, voice) is stored securely on-device in a Secure Enclave or TPM. The biometric never leaves the device—it only unlocks the private key for signing operations.</p>
+                    <ul class="tech-features">
+                        <li><i class="fas fa-check"></i> On-device storage only</li>
+                        <li><i class="fas fa-check"></i> Secure Enclave/TPM protection</li>
+                        <li><i class="fas fa-check"></i> Multiple biometric options</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Cryptographic Diagram -->
+            <div class="diagram-container">
+                <h3 class="diagram-title">Public-Key Cryptography Flow</h3>
+                <div class="crypto-diagram">
+                    <div class="crypto-step">
+                        <div class="step-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <div class="step-content">
+                            <h4>Device Registration</h4>
+                            <p>Device generates unique key pair (public/private)</p>
+                        </div>
+                    </div>
+                    <div class="crypto-arrow">→</div>
+                    <div class="crypto-step">
+                        <div class="step-icon"><i class="fas fa-server"></i></div>
+                        <div class="step-content">
+                            <h4>Public Key Storage</h4>
+                            <p>Server stores public key, private key remains on device</p>
+                        </div>
+                    </div>
+                    <div class="crypto-arrow">→</div>
+                    <div class="crypto-step">
+                        <div class="step-icon"><i class="fas fa-lock"></i></div>
+                        <div class="step-content">
+                            <h4>Authentication</h4>
+                            <p>Device signs challenge with private key, server verifies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secure Enclave Diagram -->
+            <div class="diagram-container">
+                <h3 class="diagram-title">Secure Enclave Architecture</h3>
+                <div class="enclave-diagram">
+                    <div class="enclave-layer">
+                        <div class="layer-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h4>Secure Enclave / TPM</h4>
+                        <div class="layer-items">
+                            <div class="layer-item">
+                                <i class="fas fa-fingerprint"></i>
+                                <span>Biometric Template</span>
+                            </div>
+                            <div class="layer-item">
+                                <i class="fas fa-key"></i>
+                                <span>Private Key</span>
+                            </div>
+                            <div class="layer-item">
+                                <i class="fas fa-microchip"></i>
+                                <span>Hardware Isolation</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="enclave-arrow">↓</div>
+                    <div class="enclave-layer">
+                        <div class="layer-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h4>Application Layer</h4>
+                        <p>WebAuthn API calls</p>
+                    </div>
+                    <div class="enclave-arrow">↓</div>
+                    <div class="enclave-layer">
+                        <div class="layer-icon"><i class="fas fa-cloud"></i></div>
+                        <h4>Server</h4>
+                        <p>Public key verification</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Authentication Flow -->
+    <section id="flow" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Complete Authentication Flow</h2>
+                <p class="section-subtitle">From onboarding to continuous verification</p>
+            </div>
+
+            <div class="flow-container">
+                <div class="flow-step">
+                    <div class="flow-number">1</div>
+                    <div class="flow-content">
+                        <h3>User Onboarding</h3>
+                        <p>User initiates registration. Browser calls WebAuthn API to create credentials. Device generates key pair and stores private key securely.</p>
+                        <div class="flow-details">
+                            <span class="flow-tag"><i class="fas fa-code"></i> navigator.credentials.create()</span>
+                            <span class="flow-tag"><i class="fas fa-key"></i> Key Pair Generation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flow-connector"></div>
+
+                <div class="flow-step">
+                    <div class="flow-number">2</div>
+                    <div class="flow-content">
+                        <h3>Device Registration</h3>
+                        <p>Public key is sent to server and associated with user account. Server stores credential ID and public key. Private key never leaves the device.</p>
+                        <div class="flow-details">
+                            <span class="flow-tag"><i class="fas fa-database"></i> Public Key Storage</span>
+                            <span class="flow-tag"><i class="fas fa-user"></i> User Association</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flow-connector"></div>
+
+                <div class="flow-step">
+                    <div class="flow-number">3</div>
+                    <div class="flow-content">
+                        <h3>Biometric Setup</h3>
+                        <p>User enrolls biometric (fingerprint, face, etc.) on device. Biometric template stored in Secure Enclave/TPM. Used to unlock private key operations.</p>
+                        <div class="flow-details">
+                            <span class="flow-tag"><i class="fas fa-fingerprint"></i> Biometric Enrollment</span>
+                            <span class="flow-tag"><i class="fas fa-shield-alt"></i> Secure Storage</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flow-connector"></div>
+
+                <div class="flow-step">
+                    <div class="flow-number">4</div>
+                    <div class="flow-content">
+                        <h3>Authentication Request</h3>
+                        <p>User attempts to log in. Server generates cryptographic challenge. Challenge sent to client via WebAuthn API.</p>
+                        <div class="flow-details">
+                            <span class="flow-tag"><i class="fas fa-random"></i> Challenge Generation</span>
+                            <span class="flow-tag"><i class="fas fa-paper-plane"></i> Challenge Transmission</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flow-connector"></div>
+
+                <div class="flow-step">
+                    <div class="flow-number">5</div>
+                    <div class="flow-content">
+                        <h3>Biometric Verification</h3>
+                        <p>Device prompts for biometric. User authenticates with fingerprint/face. Secure Enclave verifies biometric and unlocks private key.</p>
+                        <div class="flow-details">
+                            <span class="flow-tag"><i class="fas fa-fingerprint"></i> Biometric Check</span>
+                            <span class="flow-tag"><i class="fas fa-unlock"></i> Key Unlock</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flow-connector"></div>
+
+                <div class="flow-step">
+                    <div class="flow-number">6</div>
+                    <div class="flow-content">
+                        <h3>Challenge-Response Validation</h3>
+                        <p>Device signs challenge with private key. Signed response sent to server. Server verifies signature using stored public key.</p>
+                        <div class="flow-details">
+                            <span class="flow-tag"><i class="fas fa-signature"></i> Cryptographic Signing</span>
+                            <span class="flow-tag"><i class="fas fa-check-circle"></i> Signature Verification</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flow-connector"></div>
+
+                <div class="flow-step">
+                    <div class="flow-number">7</div>
+                    <div class="flow-content">
+                        <h3>Zero Trust Risk Assessment</h3>
+                        <p>Continuous monitoring of risk signals: device posture, network location, behavioral patterns. Risk score calculated in real-time. Access granted or additional verification required.</p>
+                        <div class="flow-details">
+                            <span class="flow-tag"><i class="fas fa-chart-line"></i> Risk Scoring</span>
+                            <span class="flow-tag"><i class="fas fa-sync"></i> Continuous Monitoring</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flow-connector"></div>
+
+                <div class="flow-step">
+                    <div class="flow-number">8</div>
+                    <div class="flow-content">
+                        <h3>JWT Token Issuance</h3>
+                        <p>Upon successful authentication, server issues JWT token. Token includes user claims and session information. Token used for subsequent API requests.</p>
+                        <div class="flow-details">
+                            <span class="flow-tag"><i class="fas fa-ticket-alt"></i> JWT Generation</span>
+                            <span class="flow-tag"><i class="fas fa-lock"></i> HTTPS/TLS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2>Key Benefits</h2>
+                <p class="section-subtitle">Why passwordless authentication matters</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <h3>Phishing Resistance</h3>
+                    <p>Private keys never leave the device, making phishing attacks ineffective. Even if credentials are intercepted, attackers cannot use them without physical device access.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-ban"></i>
+                    </div>
+                    <h3>No Password Reuse</h3>
+                    <p>Eliminates the risk of password reuse across multiple services. Each device has unique cryptographic keys that cannot be duplicated or shared.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Stronger MFA</h3>
+                    <p>Combines something you have (device) with something you are (biometric) for true multi-factor authentication. More secure than SMS or email-based 2FA.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Seamless UX</h3>
+                    <p>Users authenticate with a simple touch or glance. No passwords to remember, type, or reset. Faster and more convenient than traditional authentication.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Compliance Ready</h3>
+                    <p>Meets modern security standards including NIST 800-63B, FIDO2 certification, and Zero Trust principles. Helps organizations meet regulatory requirements.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Cost Reduction</h3>
+                    <p>Eliminates password reset costs, reduces help desk tickets, and minimizes security breach risks. Lower total cost of ownership for authentication systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="implementation" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p class="section-subtitle">Technical implementation overview</p>
+            </div>
+
+            <div class="implementation-grid">
+                <div class="impl-card">
+                    <div class="impl-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Client-Side</h3>
+                    </div>
+                    <ul class="impl-list">
+                        <li>WebAuthn API integration</li>
+                        <li>Biometric API calls</li>
+                        <li>Credential management</li>
+                        <li>Challenge signing</li>
+                    </ul>
+                </div>
+
+                <div class="impl-card">
+                    <div class="impl-header">
+                        <i class="fas fa-server"></i>
+                        <h3>Server-Side</h3>
+                    </div>
+                    <ul class="impl-list">
+                        <li>Public key storage</li>
+                        <li>Challenge generation</li>
+                        <li>Signature verification</li>
+                        <li>JWT token issuance</li>
+                        <li>Risk assessment engine</li>
+                    </ul>
+                </div>
+
+                <div class="impl-card">
+                    <div class="impl-header">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Security Layer</h3>
+                    </div>
+                    <ul class="impl-list">
+                        <li>HTTPS/TLS encryption</li>
+                        <li>Secure Enclave/TPM</li>
+                        <li>Hardware security keys</li>
+                        <li>Zero Trust policies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="features-section">
+                <h3 class="features-title">Technology Stack</h3>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript/Node.js</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>FIDO2</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-globe"></i>
+                        <span>WebAuthn</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-fingerprint"></i>
+                        <span>Biometrics API</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-key"></i>
+                        <span>Public Key Crypto</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-ticket-alt"></i>
+                        <span>JWT</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-lock"></i>
+                        <span>HTTPS/TLS</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-microchip"></i>
+                        <span>Secure Enclave</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-shield-virus"></i>
+                        <span>TPM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Implement FIDO2?</h2>
+                <p>Transform your authentication system with passwordless security and Zero Trust architecture</p>
+                <div class="cta-buttons">
+                    <a href="#implementation" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i> Get Started
+                    </a>
+                    <a href="#technology" class="btn btn-secondary">
+                        <i class="fas fa-book"></i> Learn More
+                    </a>
+                </div>
+                <div class="cta-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Phishing Resistant</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Passwords Required</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Continuous Verification</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>ZeroTrust Auth</span>
+                </div>
+                <p class="footer-text">
+                    Secure passwordless authentication powered by FIDO2, WebAuthn, and Zero Trust principles.
+                </p>
+                <div class="footer-links">
+                    <a href="#overview">Overview</a>
+                    <a href="#technology">Technology</a>
+                    <a href="#flow">Flow</a>
+                    <a href="#benefits">Benefits</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ZeroTrust Auth. Built with modern security standards.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
